@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="logo.png">
+  <title>FavMusic</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body" onload="preset();">
+  <div class="container">
+    <!--home section-->
+    <section class="home-section">
+      <div class="row" id="row-div">
+        <div id="myCarousel" class="carousel slide col-6" data-ride="carousel" data-interval="2000">
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/img/cover1.jpg" alt="Cover 1" class="img-responsive img-carousel">
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/cover2.jpg" alt="Cover 2" class="img-responsive img-carousel">
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/cover3.jpg" alt="Cover 3" class="img-responsive img-carousel">
+            </div>
+          </div>
+        </div>
+
+        <div id="myCarousel" class="carousel slide col-6" data-ride="carousel" data-interval="2000">
+
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <img src="assets/img/cover3.jpg" alt="Cover 3" class="img-responsive img-carousel">
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/cover4.jpg" alt="Cover 4" class="img-responsive img-carousel">
+            </div>
+
+            <div class="carousel-item">
+              <img src="assets/img/cover5.jpg" alt="Cover 4" class="img-responsive img-carousel">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--all songs-->
+    <h1 class="heading">All Songs</h1>
+    <section class="all-songs">
+      <div class="all-songs-items">
+        <img src="assets/img/faded.jpg" alt="Faded">
+        <p class="all-songs-name">Faded</p>
+      </div>
+      <div class="all-songs-items">
+        <img src="assets/img/alone.jpg" alt="Alone">
+        <p class="all-songs-name">Alone</p>
+      </div>
+      <div class="all-songs-items">
+        <img src="assets/img/the-spectre.jpg" alt="The Spectre">
+        <p class="all-songs-name">The Spectre</p>
+      </div>
+      <div class="all-songs-items">
+        <img src="assets/img/astronomia.jpg" alt="Astronomia">
+        <p class="all-songs-name">Astronomia</p>
+      </div>
+      <div class="all-songs-items">
+        <img src="assets/img/money-heist.jpg" alt="Bella Ciao - My Name is Tokyo">
+        <p class="all-songs-name">Bella Ciao -<br>My Name is Tokyo</p>
+      </div>
+      <div class="all-songs-items">
+        <img src="assets/img/poc.jpg" alt="Pirates of the Caribbean">
+        <p class="all-songs-name">Pirates of the Caribbean</p>
+      </div>
+      <div class="all-songs-items">
+        <img src="assets/img/superhero.jpg" alt="Superhero">
+        <p class="all-songs-name">Superhero</p>
+      </div>
+      <div class="all-songs-items">
+        <img src="assets/img/believer.jpg" alt="Believer">
+        <p class="all-songs-name">Believer</p>
+      </div>
+      <div class="all-songs-items">
+        <img src="assets/img/death-note.jpg" alt="Death Note">
+        <p class="all-songs-name">Death Note</p>
+      </div>
+      <div class="all-songs-items">
+        <img src="assets/img/naruto.jpg" alt="Naruto">
+        <p class="all-songs-name">Naruto</p>
+      </div>
+      <div class="all-songs-items" style="margin-right: 0px !important;">
+        <img src="assets/img/kong.jpg" alt="Kong" id="kong">
+        <p class="all-songs-name">Kong</p>
+      </div>
+    </section>
+    <!--genre-->
+    <h1 class="heading genre-heading">Genre</h1>
+    <section class="all-songs" id="genre-songs">
+      <div class="all-songs-items genre-item electronic">
+        <img src="assets/img/electronic.jpg" alt="Electronic/Dance">
+        <p class="all-songs-name">Dance/Electronic</p>
+      </div>
+      <div class="all-songs-items genre-item bgm">
+        <img src="assets/img/bgm.jpg" alt="BGM">
+        <p class="all-songs-name">BGM</p>
+      </div>
+      <div class="all-songs-items genre-item pop-rock">
+        <img src="assets/img/pop-rock.jpg" alt="Pop Rock">
+        <p class="all-songs-name">Pop Rock</p>
+      </div>
+      <div class="all-songs-items genre-item anime">
+        <img src="assets/img/anime.jpg" alt="Anime">
+        <p class="all-songs-name">Anime</p>
+      </div>
+      <div class="all-songs-items genre-item motivation" style="margin-right: 0px !important;">
+        <img src="assets/img/motivation.jpg" alt="Motivation">
+        <p class="all-songs-name">Motivation</p>
+      </div>
+    </section>
+    <hr color="white">
+    <!--electrionic-->
+    <div class="song-electronic div-no">
+      <section class="all-songs">
+        <div class="all-songs-items">
+          <img src="assets/img/faded.jpg" alt="Faded" id="faded" class="small-img">
+          <p class="all-songs-name small-text">Faded</p>
+        </div>
+        <div class="all-songs-items">
+          <img src="assets/img/alone.jpg" alt="Alone" class="small-img">
+          <p class="all-songs-name small-text">Alone</p>
+        </div>
+        <div class="all-songs-items">
+          <img src="assets/img/the-spectre.jpg" alt="The Spectre" class="small-img">
+          <p class="all-songs-name small-text">The Spectre</p>
+        </div>
+        <div class="all-songs-items">
+          <img src="assets/img/astronomia.jpg" alt="Astronomia" class="small-img">
+          <p class="all-songs-name small-text">Astronomia</p>
+        </div>
+        <div class="all-songs-items">
+          <img src="assets/img/superhero.jpg" alt="Superhero" class="small-img">
+          <p class="all-songs-name small-text">Superhero</p>
+        </div>
+      </section>
+    </div>
+    <!--BGM-->
+    <div class="song-bgm div-no">
+      <section class="all-songs">
+        <div class="all-songs-items">
+          <img src="assets/img/money-heist.jpg" alt="Bella Ciao - My Name is Tokyo" class="small-img">
+          <p class="all-songs-name small-text">Bella Ciao -<br>My Name is Tokyo</p>
+        </div>
+        <div class="all-songs-items">
+          <img src="assets/img/poc.jpg" alt="Pirates of the Caribbean" class="small-img">
+          <p class="all-songs-name small-text">Pirates of the Caribbean</p>
+        </div>
+      </section>
+    </div>
+    <!--pop rock-->
+    <div class="song-pop-rock div-no">
+      <section class="all-songs">
+        <div class="all-songs-items">
+          <img src="assets/img/believer.jpg" alt="Believer" class="small-img">
+          <p class="all-songs-name small-text">Believer</p>
+        </div>
+      </section>
+    </div>
+    <!--anime-->
+    <div class="song-anime div-no">
+      <section class="all-songs">
+        <div class="all-songs-items">
+          <img src="assets/img/death-note.jpg" alt="Death Note" class="small-img">
+          <p class="all-songs-name small-text">Death Note</p>
+        </div>
+        <div class="all-songs-items">
+          <img src="assets/img/naruto.jpg" alt="Naruto" class="small-img">
+          <p class="all-songs-name small-text">Naruto</p>
+        </div>
+      </section>
+    </div>
+    <!--motivation-->
+    <div class="song-motivation div-no">
+      <section class="all-songs">
+        <div class="all-songs-items" style="margin-right: 0px !important;">
+          <img src="assets/img/kong.jpg" alt="Kong" id="kong" class="small-img">
+          <p class="all-songs-name small-text">Kong</p>
+        </div>
+      </section>
+    </div>
+    <!--artist-->
+    <h1 class="heading">Artist</h1>
+    <section class="all-songs">
+      <div class="all-songs-items genre-item alan-walker">
+        <img src="assets/img/alan-walker.jpg" alt="Alan Walker">
+        <p class="all-songs-name">Alan Walker</p>
+      </div>
+      <div class="all-songs-items genre-item hoober">
+        <img src="assets/img/32stitches-hoober.jpg" alt="32Stitches & Hoober">
+        <p class="all-songs-name">32Stitches & <br> Hoober</p>
+      </div>
+      <div class="all-songs-items genre-item ilkan-gunuc">
+        <img src="assets/img/ilkan-gunuc-emrah-turken.jpg" alt="Ilkan Gunuc & Emrah Turken">
+        <p class="all-songs-name">Ilkan Gunuc & Emrah Turken</p>
+      </div>
+      <div class="all-songs-items genre-item poc">
+        <img src="assets/img/poc.jpg" alt="Pirates of the Caribbean">
+        <p class="all-songs-name">Pirates of the Caribbean</p>
+      </div>
+      <div class="all-songs-items genre-item chris-linton">
+        <img src="assets/img/chris-linton.jpg" alt="Chris Linton">
+        <p class="all-songs-name">Chris Linton</p>
+      </div>
+      <div class="all-songs-items genre-item imagine-dragons">
+        <img src="assets/img/imagine-dragons.jpg" alt="Imagine Dragons">
+        <p class="all-songs-name">Imagine Dragons</p>
+      </div>
+      <div class="all-songs-items genre-item anime1">
+        <img src="assets/img/anime.jpg" alt="Anime">
+        <p class="all-songs-name">Anime</p>
+      </div>
+      <div class="all-songs-items genre-item ender-guney" style="margin-right: 0px !important;">
+        <img src="assets/img/ender-güney.jpg" alt="Ender Güney">
+        <p class="all-songs-name">Ender Güney</p>
+      </div>
+    </section>
+    <hr color="white">
+    <!--alan walker-->
+    <div class="artist-alan-walker div-no">
+      <section class="all-songs">
+        <div class="all-songs-items">
+          <img src="assets/img/faded.jpg" alt="Faded" id="faded" class="small-img">
+          <p class="all-songs-name small-text">Faded</p>
+        </div>
+        <div class="all-songs-items">
+          <img src="assets/img/alone.jpg" alt="Alone" class="small-img">
+          <p class="all-songs-name small-text">Alone</p>
+        </div>
+        <div class="all-songs-items">
+          <img src="assets/img/the-spectre.jpg" alt="The Spectre" class="small-img">
+          <p class="all-songs-name small-text">The Spectre</p>
+        </div>
+      </section>
+    </div>
+    <!--32stitches and hoober-->
+    <div class="artist-hoober div-no">
+      <section class="all-songs">
+        <div class="all-songs-items">
+          <img src="assets/img/astronomia.jpg" alt="Astronomia" class="small-img">
+          <p class="all-songs-name small-text">Astronomia</p>
+        </div>
+      </section>
+    </div>
+    <!--ikan gunuc and emrah turken-->
+    <div class="artist-ilkan-gunuc div-no">
+      <section class="all-songs">
+        <div class="all-songs-items">
+          <img src="assets/img/money-heist.jpg" alt="Bella Ciao - My Name is Tokyo" class="small-img">
+          <p class="all-songs-name small-text">Bella Ciao -<br>My Name is Tokyo</p>
+        </div>
+      </section>
+    </div>
+    <!--poc-->
+    <div class="artist-poc div-no">
+      <section class="all-songs">
+        <div class="all-songs-items">
+          <img src="assets/img/poc.jpg" alt="Pirates of the Caribbean" class="small-img">
+          <p class="all-songs-name small-text">Pirates of the Caribbean</p>
+        </div>
+      </section>
+    </div>
+    <!--chris linton-->
+    <div class="artist-chris-linton div-no">
+      <section class="all-songs">
+        <div class="all-songs-items">
+          <img src="assets/img/superhero.jpg" alt="Superhero" class="small-img">
+          <p class="all-songs-name small-text">Superhero</p>
+        </div>
+      </section>
+    </div>
+    <!--imagine dragons-->
+    <div class="artist-imagine-dragons div-no">
+      <section class="all-songs">
+        <div class="all-songs-items">
+          <img src="assets/img/believer.jpg" alt="Believer" class="small-img">
+          <p class="all-songs-name small-text">Believer</p>
+        </div>
+      </section>
+    </div>
+    <!--anime-->
+    <div class="artist-anime div-no">
+    <section class="all-songs">
+      <div class="all-songs-items">
+        <img src="assets/img/death-note.jpg" alt="Death Note" class="small-img">
+        <p class="all-songs-name small-text">Death Note</p>
+      </div>
+      <div class="all-songs-items">
+        <img src="assets/img/naruto.jpg" alt="Naruto" class="small-img">
+        <p class="all-songs-name small-text">Naruto</p>
+      </div>
+    </section>
+    </div>
+    <!--ender guney-->
+    <div class="artist-ender-guney div-no">
+    <section class="all-songs">
+      <div class="all-songs-items">
+        <img src="assets/img/kong.jpg" alt="Kong" class="small-img">
+        <p class="all-songs-name small-text">Kong</p>
+      </div>
+    </section>
+    </div>
+    <div style="margin-bottom: 105px;"></div>
+    <!--music-player-->
+    <section class="music-player-section">
+      <span class="fas fa-chevron-down back-btn icon hide"></span>
+      <span class="fas fa-chevron-up up-btn icon"></span>
+      <div class="visualiser" id="canvas"></div>
+      <h1 class="current-song-name">song1</h1>
+      <p class="artist-name hide">artist1</p>
+      <div class="seek-bar-container">
+        <input type="range" class="music-seek-bar" value="0">
+        <p class="current-time hide" id="current-time">00:00</p>
+        <p class="duration hide" id="duration">00:00</p>
+      </div>
+      <div class="controls">
+        <span class="fas fa-redo"></span>
+        <div class="main">
+          <i class="fas fa-backward active"></i>
+          <i class="fas fa-play active"></i>
+          <i class="fas fa-pause"></i>
+          <i class="fas fa-forward active"></i>
+        </div>
+        <input type="range" class="volume-slider" max="1" value="1" step="0.05">
+        <span class="fas fa-volume-up"></span>
+      </div>
+    </section>
+    <!--/music-player-->
+  </div>
+</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
+
+</html>

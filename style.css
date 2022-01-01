@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #141414;
+    --text-color: #ffffff;
+    --primary-color: #19ff66;
+    --secondary-color: #000000;
+    --alpha-color: rgba(0, 0, 0, 0.5);
+    --shadow: 0 15px 40px var(--alpha-color);
+    --font: 'roboto', sans-serif;
+}
+
+html {
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    scroll-behavior: smooth;
+}
+
+#body {
+    width: 100%;
+    max-width: 90%;
+    position: relative;
+    background: var(--background);
+    font-family: var(--font);
+    color: var(--text-color);
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #19ff66c4;
+}
+
+.home-section {
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+#myCarousel {
+    width: 100%;
+    height: 200px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.img-carousel {
+    box-shadow: var(--shadow);
+    border-radius: 25px;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.carousel-inner {
+    border-radius: 25px;
+}
+
+#myCarousel1 {
+    width: 100% !important;
+    height: 200px !important;
+    border-radius: 25px !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.img-carousel1 {
+    box-shadow: var(--shadow) !important;
+    border-radius: 25px !important;
+    width: 100% !important;
+    height: 200px !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+#carousel-inner1 {
+    border-radius: 25px !important;
+    width: 100% !important;
+}
+
+.heading {
+    font-size: 25px;
+}
+
+.genre-heading {
+    margin-top: 15px;
+}
+
+.all-songs {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: none;
+}
+
+.all-songs-items {
+    flex: 0 0 auto;
+    max-width: 150px;
+    height: 100%;
+    margin-right: 20px;
+    background-position: center;
+    background-size: cover;
+}
+
+.all-songs-items img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.all-songs-name {
+    width: 100%;
+    font-size: 18px;
+    padding: 5px;
+    word-spacing: normal;
+}
+
+.small-img {
+    height: 135px !important;
+    width: 135px !important;
+}
+
+.small-text {
+    font-size: 16.5px;
+}
+
+.visualiser {
+    width: 35%;
+    height: 100px;
+    float: right;
+}
+
+.music-player-section {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: var(--alpha-color);
+    backdrop-filter: blur(50px);
+    transition: 1s;
+    overflow: hidden;
+}
+
+.music-seek-bar {
+    -webkit-appearance: none;
+    width: 65%;
+    position: absolute;
+    top: 0;
+    height: 8px;
+    background: var(--secondary-color);
+    overflow: hidden;
+}
+
+.music-seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 10px;
+    width: 5px;
+    background: var(--primary-color);
+    cursor: pointer;
+    box-shadow: -650px 0 0 650px var(--primary-color);
+}
+
+.current-song-name {
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+.controls {
+    position: relative;
+    width: 65%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    font-size: 30px;
+}
+
+.controls span {
+    display: none;
+    opacity: 0;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.main i {
+    cursor: pointer;
+}
+
+#electronic {
+    display: flex;
+}
+
+.div-no {
+    display: none;
+}
+
+.music-player-section.active .controls {
+    justify-content: space-between;
+}
+
+.music-player-section.active .controls span {
+    font-size: 25px;
+    display: block;
+    opacity: 0.5;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.music-player-section.active .controls span.active {
+    color: var(--primary-color);
+}
+
+.controls .main i {
+    margin: 0 5px;
+    display: none;
+}
+
+.controls .main i.active {
+    display: inline;
+}
+
+.music-player-section .hide {
+    display: none;
+    opacity: 0;
+    transition: 1s;
+}
+
+.music-player-section.active .hide {
+    display: block;
+    opacity: 1;
+}
+
+.music-player-section.active {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.music-player-section.active .music-seek-bar {
+    position: relative;
+    display: block;
+    border-radius: 50px;
+    margin: auto;
+    width: 95%;
+}
+
+.music-player-section.active .current-song-name {
+    font-size: 30px;
+}
+
+.music-player-section.active .controls {
+    width: 100%;
+    font-size: 35px;
+    bottom: -25px;
+}
+
+.music-player-section.active .visualiser {
+    align-self: center;
+    width: 350px;
+    height: 350px;
+    border-radius: 30px;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.artist-name {
+    text-align: center;
+    font-size: 25px;
+    text-transform: capitalize;
+}
+
+.current-time {
+    position: absolute;
+    margin-top: 5px;
+    left: 62px;
+}
+
+.duration {
+    position: absolute;
+    margin-top: 5px;
+    right: 62px;
+}
+
+.icon {
+    position: absolute;
+    top: 60px;
+    transform: scale(1.5);
+}
+
+.back-btn {
+    left: 60px;
+    cursor: pointer;
+}
+.up-btn{
+    left: 20px;
+    top: 25px;
+    cursor: pointer;
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    right: -5px;
+    bottom: 70px;
+    transform: rotate(-90deg);
+    border-radius: 20px;
+    background: var(--alpha-color);
+    overflow: hidden;
+    opacity: 0;
+    display: none;
+}
+
+.volume-slider.active {
+    opacity: 1;
+    display: block;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 40px;
+    width: 10px;
+    background: var(--primary-color);
+    box-shadow: -200px 0 1px 200px var(--primary-color);
+}

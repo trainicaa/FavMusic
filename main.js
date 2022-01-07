@@ -344,10 +344,10 @@ function updateSong(i) {
     musicSlider.max = music.duration;
     playBtn.classList.add("active");
     pauseBtn.classList.remove("active");
-    setTimeout(() => {
+    music.addEventListener('loadedmetadata', function () {
         musicSlider.max = music.duration;
         duration.innerHTML = formatTime(music.duration);
-    }, 500);
+    });
     currentMusicTime.innerHTML = "00:00";
 }
 const formatTime = (time) => {

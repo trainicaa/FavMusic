@@ -56,6 +56,20 @@ html {
     border-radius: 25px;
 }
 
+.info-icon {
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: 2px;
+}
+
+.modal-font {
+    color: var(--secondary-color);
+}
+
+.inline {
+    display: inline;
+}
+
 #myCarousel {
     width: 100%;
     height: 200px;
@@ -147,13 +161,16 @@ html {
     font-size: 16.5px;
 }
 
-.visualiser {
-    width: 35%;
-    height: 100px;
-    float: right;
+.cover {
+    height: 300px;
+    width: 300px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    display: none;
 }
 
 .music-player-section {
+    display: none;
     width: 100%;
     height: 100px;
     position: fixed;
@@ -161,18 +178,19 @@ html {
     left: 0;
     background: var(--alpha-color);
     backdrop-filter: blur(50px);
-    transition: 1s;
+    transition: 0.75s;
     overflow: hidden;
 }
 
 .music-seek-bar {
     -webkit-appearance: none;
-    width: 65%;
+    width: 100%;
     position: absolute;
     top: 0;
     height: 8px;
     background: var(--secondary-color);
     overflow: hidden;
+    margin: auto;
 }
 
 .music-seek-bar::-webkit-slider-thumb {
@@ -181,21 +199,29 @@ html {
     width: 5px;
     background: var(--primary-color);
     cursor: pointer;
-    box-shadow: -650px 0 0 650px var(--primary-color);
+    box-shadow: -850px 0 0 850px var(--primary-color);
 }
 
 .current-song-name {
     font-weight: 300;
     font-size: 20px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: -15px;
     text-transform: capitalize;
+}
+
+.loading-div {
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    height: 35px;
+    margin-top: 5px;
 }
 
 .controls {
     position: relative;
-    width: 65%;
-    margin: auto;
+    width: 100%;
+    bottom: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,10 +230,13 @@ html {
 }
 
 .controls span {
-    display: none;
-    opacity: 0;
+    font-size: 25px;
+    margin-left: 40px;
+    margin-right: 40px;
+    opacity: 0.5;
     transition: 1s;
     cursor: pointer;
+    display: none;
 }
 
 .main i {
@@ -224,23 +253,34 @@ html {
 
 .music-player-section.active .controls {
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 .music-player-section.active .controls span {
     font-size: 25px;
     display: block;
     opacity: 0.5;
-    margin-right: 30px;
-    margin-left: 30px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .music-player-section.active .controls span.active {
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+.volume-btn:hover {
     color: var(--primary-color);
 }
 
 .controls .main i {
     margin: 0 5px;
     display: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .controls .main i.active {
@@ -270,12 +310,13 @@ html {
     position: relative;
     display: block;
     border-radius: 50px;
-    margin: auto;
     width: 95%;
+    margin: auto;
 }
 
 .music-player-section.active .current-song-name {
     font-size: 30px;
+    margin-top: 10px;
 }
 
 .music-player-section.active .controls {
@@ -284,13 +325,13 @@ html {
     bottom: -25px;
 }
 
-.music-player-section.active .visualiser {
+.music-player-section.active .cover {
     align-self: center;
-    width: 350px;
-    height: 350px;
+    display: block;
+    margin-left: 38.5%;
+    width: 300px;
+    height: 300px;
     border-radius: 30px;
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -315,19 +356,24 @@ html {
 }
 
 .icon {
-    position: absolute;
-    top: 60px;
     transform: scale(1.5);
 }
 
 .back-btn {
-    left: 60px;
+    width: fit-content;
     cursor: pointer;
+    margin-bottom: 13px;
+    margin-left: 10px;
+    transition: none !important;
 }
-.up-btn{
-    left: 20px;
-    top: 25px;
+
+.up-btn {
+    width: fit-content;
+    height: fit-content;
+    margin-left: 20px;
+    margin-top: 20px;
     cursor: pointer;
+    transition: none !important;
 }
 
 .volume-slider {
@@ -341,8 +387,10 @@ html {
     border-radius: 20px;
     background: var(--alpha-color);
     overflow: hidden;
-    opacity: 0;
     display: none;
+    z-index: 2;
+    cursor: pointer;
+    transition: 1s;
 }
 
 .volume-slider.active {
@@ -351,9 +399,15 @@ html {
 }
 
 .volume-slider::-webkit-slider-thumb {
+    cursor: pointer;
     -webkit-appearance: none;
     height: 40px;
     width: 10px;
     background: var(--primary-color);
     box-shadow: -200px 0 1px 200px var(--primary-color);
+}
+
+.bottom-space {
+    margin-bottom: 105px;
+    display: none;
 }

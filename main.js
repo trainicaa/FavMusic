@@ -344,6 +344,7 @@ function updateSong(i) {
     musicSlider.max = music.duration;
     playBtn.classList.add("active");
     pauseBtn.classList.remove("active");
+    duration.innerHTML = "Loading...";
     music.addEventListener('loadedmetadata', function () {
         musicSlider.max = music.duration;
         duration.innerHTML = formatTime(music.duration);

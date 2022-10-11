@@ -350,6 +350,7 @@ function updateSong(i) {
         duration.innerHTML = formatTime(music.duration);
     });
     currentMusicTime.innerHTML = "00:00";
+    playBtn.click();
 }
 const formatTime = (time) => {
     let min = Math.floor(time / 60);

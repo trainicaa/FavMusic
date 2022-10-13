@@ -15,6 +15,48 @@ songName = document.querySelector(".current-song-name");
 artistName = document.querySelector(".artist-name");
 var songs = [
     {
+        name: 'Not Afraid',
+        path: 'assets/music/not-afraid.mp3',
+        artist: 'Eminem',
+        genre: 'Hip Hop',
+        cover: 'assets/img/not-afraid.jpg'
+    },
+    {
+        name: 'The Real Slim Shady',
+        path: 'assets/music/the-real-slim-shady.mp3',
+        artist: 'Eminem',
+        genre: 'Hip Hop',
+        cover: 'assets/img/the-real-slim-shady.jpg'
+    },
+    {
+        name: 'Without Me',
+        path: 'assets/music/without-me.mp3',
+        artist: 'Without Me',
+        genre: 'Hip Hop',
+        cover: 'assets/img/without-me.jpg'
+    },
+    {
+        name: 'Hope',
+        path: 'assets/music/hope.mp3',
+        artist: 'XXXTENTACION',
+        genre: 'Hip Hop',
+        cover: 'assets/img/hope.jpg'
+    },
+    {
+        name: 'Blinding Lights',
+        path: 'assets/music/blinding-lights.mp3',
+        artist: 'The Weeknd',
+        genre: 'Soul',
+        cover: 'assets/img/blinding-lights.jpg'
+    },
+    {
+        name: 'Starboy',
+        path: 'assets/music/starboy.mp3',
+        artist: 'The Weeknd',
+        genre: 'Soul',
+        cover: 'assets/img/starboy.jpg'
+    },
+    {
         name: 'Faded',
         path: 'assets/music/faded.mp3',
         artist: 'Alan Walker',
@@ -22,74 +64,25 @@ var songs = [
         cover: 'assets/img/faded.jpg'
     },
     {
-        name: 'Alone',
-        path: 'assets/music/alone.mp3',
-        artist: 'Alan Walker',
-        genre: 'Dance/Electronic',
-        cover: 'assets/img/alone.jpg'
+        name: 'Cold',
+        path: 'assets/music/cold.mp3',
+        artist: 'NEFFEX',
+        genre: 'Soul',
+        cover: 'assets/img/cold.jpg'
     },
     {
-        name: 'The Spectre',
-        path: 'assets/music/the-spectre.mp3',
-        artist: 'Alan Walker',
-        genre: 'Dance/Electronic',
-        cover: 'assets/img/the-spectre.jpg'
+        name: 'Heat Waves',
+        path: 'assets/music/heat-waves.mp3',
+        artist: 'Glass Animals',
+        genre: 'Pop',
+        cover: 'assets/img/heat-waves.jpg'
     },
     {
-        name: 'Astronomia',
-        path: 'assets/music/astronomia.mp3',
-        artist: '32Stitches & Hoober',
-        genre: 'Dance/Electronic',
-        cover: 'assets/img/astronomia.jpg'
-    },
-    {
-        name: 'Bella Ciao (My Name is Tokyo)',
-        path: 'assets/music/bella-ciao.mp3',
-        artist: 'Ilkan Gunuc & Emrah Turken',
-        genre: 'BGM',
-        cover: 'assets/img/money-heist.jpg'
-    },
-    {
-        name: 'Pirates of the Caribbean',
-        path: 'assets/music/poc.mp3',
-        artist: 'Pirates of the Caribbean',
-        genre: 'BGM',
-        cover: 'assets/img/poc.jpg'
-    },
-    {
-        name: 'Superhero',
-        path: 'assets/music/superhero.mp3',
-        artist: 'Chris Linton',
-        genre: 'Dance/Electronic',
-        cover: 'assets/img/superhero.jpg'
-    },
-    {
-        name: 'Believer',
-        path: 'assets/music/believer.mp3',
-        artist: 'Imagine Dragons',
-        genre: 'Pop rock, Alternative/Indie',
-        cover: 'assets/img/believer.jpg'
-    },
-    {
-        name: 'Death Note',
-        path: 'assets/music/death-note.mp3',
-        artist: 'Death Note',
-        genre: 'Anime',
-        cover: 'assets/img/death-note.jpg'
-    },
-    {
-        name: 'Naruto',
-        path: 'assets/music/naruto.mp3',
-        artist: 'Naruto',
-        genre: 'Anime',
-        cover: 'assets/img/naruto.jpg'
-    },
-    {
-        name: 'Kong',
-        path: 'assets/music/kong.mp3',
-        artist: 'Ender Güney',
-        genre: 'Motivation',
-        cover: 'assets/img/kong.jpg'
+        name: 'Stay',
+        path: 'assets/music/stay.mp3',
+        artist: 'The Kid LAROI',
+        genre: 'Pop',
+        cover: 'assets/img/stay.jpg'
     },
 ];
 var isMobile = {
@@ -136,120 +129,93 @@ $(document).ready(function () {
             }
         }
     })
+    $(".hip-hop").click(function () {
+        $(".song-hip-hop").toggle(500);
+        $(".song-soul").hide(500);
+        $(".song-electronic").hide(500);
+        $(".song-anime").hide(500);
+    });
+    $(".soul").click(function () {
+        $(".song-soul").toggle(500);
+        $(".song-hip-hop").hide(500);
+        $(".song-electronic").hide(500);
+        $(".song-pop").hide(500);
+    });
     $(".electronic").click(function () {
         $(".song-electronic").toggle(500);
-        $(".song-bgm").hide(500);
-        $(".song-pop-rock").hide(500);
-        $(".song-anime").hide(500);
-        $(".song-motivation").hide(500);
+        $(".song-hip-hop").hide(500);
+        $(".song-soul").hide(500);
+        $(".song-pop").hide(500);
     });
-    $(".bgm").click(function () {
-        $(".song-bgm").toggle(500);
+    $(".pop").click(function () {
+        $(".song-pop").toggle(500);
+        $(".song-hip-hop").hide(500);
         $(".song-electronic").hide(500);
-        $(".song-pop-rock").hide(500);
-        $(".song-anime").hide(500);
-        $(".song-motivation").hide(500);
+        $(".song-soul").hide(500);
     });
-    $(".pop-rock").click(function () {
-        $(".song-pop-rock").toggle(500);
-        $(".song-electronic").hide(500);
-        $(".song-bgm").hide(500);
-        $(".song-anime").hide(500);
-        $(".song-motivation").hide(500);
+
+    $(".eminem").click(function () {
+        $(".artist-eminem").toggle(500);
+        $(".artist-xxxtentacion").hide(500);
+        $(".artist-the-weeknd").hide(500);
+        $(".artist-alan-walker").hide(500);
+        $(".artist-neffex").hide(500);
+        $(".artist-glass-animals").hide(500);
+        $(".artist-the-kid-laroi").hide(500);
     });
-    $(".anime").click(function () {
-        $(".song-anime").toggle(500);
-        $(".song-electronic").hide(500);
-        $(".song-pop-rock").hide(500);
-        $(".song-bgm").hide(500);
-        $(".song-motivation").hide(500);
+    $(".xxxtentacion").click(function () {
+        $(".artist-xxxtentacion").toggle(500);
+        $(".artist-eminem").hide(500);
+        $(".artist-the-weeknd").hide(500);
+        $(".artist-alan-walker").hide(500);
+        $(".artist-neffex").hide(500);
+        $(".artist-glass-animals").hide(500);
+        $(".artist-the-kid-laroi").hide(500);
     });
-    $(".motivation").click(function () {
-        $(".song-motivation").toggle(500);
-        $(".song-electronic").hide(500);
-        $(".song-pop-rock").hide(500);
-        $(".song-anime").hide(500);
-        $(".song-bgm").hide(500);
+    $(".the-weeknd").click(function () {
+        $(".artist-the-weeknd").toggle(500);
+        $(".artist-eminem").hide(500);
+        $(".artist-xxxtentacion").hide(500);
+        $(".artist-alan-walker").hide(500);
+        $(".artist-neffex").hide(500);
+        $(".artist-glass-animals").hide(500);
+        $(".artist-the-kid-laroi").hide(500);
     });
     $(".alan-walker").click(function () {
         $(".artist-alan-walker").toggle(500);
-        $(".artist-hoober").hide(500);
-        $(".artist-ilkan-gunuc").hide(500);
-        $(".artist-poc").hide(500);
-        $(".artist-chris-linton").hide(500);
-        $(".artist-imagine-dragons").hide(500);
-        $(".artist-anime").hide(500);
-        $(".artist-ender-guney").hide(500);
+        $(".artist-eminem").hide(500);
+        $(".artist-xxxtentacion").hide(500);
+        $(".artist-the-weeknd").hide(500);
+        $(".artist-neffex").hide(500);
+        $(".artist-glass-animals").hide(500);
+        $(".artist-the-kid-laroi").hide(500);
     });
-    $(".hoober").click(function () {
-        $(".artist-hoober").toggle(500);
+    $(".neffex").click(function () {
+        $(".artist-neffex").toggle(500);
+        $(".artist-eminem").hide(500);
+        $(".artist-xxxtentacion").hide(500);
+        $(".artist-the-weeknd").hide(500);
         $(".artist-alan-walker").hide(500);
-        $(".artist-ilkan-gunuc").hide(500);
-        $(".artist-poc").hide(500);
-        $(".artist-chris-linton").hide(500);
-        $(".artist-imagine-dragons").hide(500);
-        $(".artist-anime").hide(500);
-        $(".artist-ender-guney").hide(500);
+        $(".artist-glass-animals").hide(500);
+        $(".artist-the-kid-laroi").hide(500);
     });
-    $(".ilkan-gunuc").click(function () {
-        $(".artist-ilkan-gunuc").toggle(500);
-        $(".artist-hoober").hide(500);
+    $(".glass-animals").click(function () {
+        $(".artist-glass-animals").toggle(500);
+        $(".artist-eminem").hide(500);
+        $(".artist-xxxtentacion").hide(500);
+        $(".artist-the-weeknd").hide(500);
         $(".artist-alan-walker").hide(500);
-        $(".artist-poc").hide(500);
-        $(".artist-chris-linton").hide(500);
-        $(".artist-imagine-dragons").hide(500);
-        $(".artist-anime").hide(500);
-        $(".artist-ender-guney").hide(500);
+        $(".artist-neffex").hide(500);
+        $(".artist-the-kid-laroi").hide(500);
     });
-    $(".poc").click(function () {
-        $(".artist-poc").toggle(500);
-        $(".artist-hoober").hide(500);
-        $(".artist-ilkan-gunuc").hide(500);
+    $(".the-kid-laroi").click(function () {
+        $(".artist-the-kid-laroi").toggle(500);
+        $(".artist-eminem").hide(500);
+        $(".artist-xxxtentacion").hide(500);
+        $(".artist-the-weeknd").hide(500);
         $(".artist-alan-walker").hide(500);
-        $(".artist-chris-linton").hide(500);
-        $(".artist-imagine-dragons").hide(500);
-        $(".artist-anime").hide(500);
-        $(".artist-ender-guney").hide(500);
-    });
-    $(".chris-linton").click(function () {
-        $(".artist-chris-linton").toggle(500);
-        $(".artist-hoober").hide(500);
-        $(".artist-ilkan-gunuc").hide(500);
-        $(".artist-poc").hide(500);
-        $(".artist-alan-walker").hide(500);
-        $(".artist-imagine-dragons").hide(500);
-        $(".artist-anime").hide(500);
-        $(".artist-ender-guney").hide(500);
-    });
-    $(".imagine-dragons").click(function () {
-        $(".artist-imagine-dragons").toggle(500);
-        $(".artist-hoober").hide(500);
-        $(".artist-ilkan-gunuc").hide(500);
-        $(".artist-poc").hide(500);
-        $(".artist-chris-linton").hide(500);
-        $(".artist-alan-walker").hide(500);
-        $(".artist-anime").hide(500);
-        $(".artist-ender-guney").hide(500);
-    });
-    $(".anime1").click(function () {
-        $(".artist-anime").toggle(500);
-        $(".artist-hoober").hide(500);
-        $(".artist-ilkan-gunuc").hide(500);
-        $(".artist-poc").hide(500);
-        $(".artist-chris-linton").hide(500);
-        $(".artist-imagine-dragons").hide(500);
-        $(".artist-alan-walker").hide(500);
-        $(".artist-ender-guney").hide(500);
-    });
-    $(".ender-guney").click(function () {
-        $(".artist-ender-guney").toggle(500);
-        $(".artist-hoober").hide(500);
-        $(".artist-ilkan-gunuc").hide(500);
-        $(".artist-poc").hide(500);
-        $(".artist-chris-linton").hide(500);
-        $(".artist-imagine-dragons").hide(500);
-        $(".artist-anime").hide(500);
-        $(".artist-alan-walker").hide(500);
+        $(".artist-neffex").hide(500);
+        $(".artist-glass-animals").hide(500);
     });
     $(".up-btn").click(function () {
         $(".music-player-section").addClass("active");
@@ -259,60 +225,55 @@ $(document).ready(function () {
         $(".music-player-section").removeClass("active");
         $(".up-btn").show(100);
     });
-    $(".faded").click(function () {
+    $(".not-afraid").click(function () {
         $(".music-player-section").slideDown(100);
         $(".bottom-space").show(100);
         updateSong(0);
     });
-    $(".alone").click(function () {
+    $(".the-real-slim-shady").click(function () {
         $(".music-player-section").slideDown(100);
         $(".bottom-space").show(100);
         updateSong(1);
     });
-    $(".spectre").click(function () {
+    $(".without-me").click(function () {
         $(".music-player-section").slideDown(100);
         $(".bottom-space").show(100);
         updateSong(2);
     });
-    $(".astronomia").click(function () {
+    $(".hope").click(function () {
         $(".music-player-section").slideDown(100);
         $(".bottom-space").show(100);
         updateSong(3);
     });
-    $(".bella-ciao").click(function () {
+    $(".blinding-lights").click(function () {
         $(".music-player-section").slideDown(100);
         $(".bottom-space").show(100);
         updateSong(4);
     });
-    $(".poc1").click(function () {
+    $(".starboy").click(function () {
         $(".music-player-section").slideDown(100);
         $(".bottom-space").show(100);
         updateSong(5);
     });
-    $(".superhero").click(function () {
+    $(".faded").click(function () {
         $(".music-player-section").slideDown(100);
         $(".bottom-space").show(100);
         updateSong(6);
     });
-    $(".believer").click(function () {
+    $(".cold").click(function () {
         $(".music-player-section").slideDown(100);
         $(".bottom-space").show(100);
         updateSong(7);
     });
-    $(".death-note").click(function () {
+    $(".heat-waves").click(function () {
         $(".music-player-section").slideDown(100);
         $(".bottom-space").show(100);
         updateSong(8);
     });
-    $(".naruto").click(function () {
+    $(".stay").click(function () {
         $(".music-player-section").slideDown(100);
         $(".bottom-space").show(100);
         updateSong(9);
-    });
-    $(".kong").click(function () {
-        $(".music-player-section").slideDown(100);
-        $(".bottom-space").show(100);
-        updateSong(10);
     });
     $(".play-btn").click(function () {
         $(".pause-btn").addClass("active");
@@ -342,15 +303,15 @@ function updateSong(i) {
     artistName.innerHTML = song.artist;
     musicSlider.value = "0";
     musicSlider.max = music.duration;
-    playBtn.classList.add("active");
-    pauseBtn.classList.remove("active");
+    playBtn.classList.remove("active");
+    pauseBtn.classList.add("active");
     duration.innerHTML = "Loading...";
     music.addEventListener('loadedmetadata', function () {
         musicSlider.max = music.duration;
         duration.innerHTML = formatTime(music.duration);
+        music.play();
     });
     currentMusicTime.innerHTML = "00:00";
-    playBtn.click();
 }
 const formatTime = (time) => {
     let min = Math.floor(time / 60);

@@ -31,7 +31,7 @@ var songs = [
     {
         name: 'Without Me',
         path: 'assets/music/without-me.mp3',
-        artist: 'Without Me',
+        artist: 'Eminem',
         genre: 'Hip Hop',
         cover: 'assets/img/without-me.jpg'
     },
